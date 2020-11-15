@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`deve cadastrar usuário com sucesso 1`] = `
+Object {
+  "Usuario": Array [
+    Usuario {
+      "email": "felipe@mail.com",
+      "id": 1,
+      "nome": "Felipe Aguiar",
+      "papel": "usuario",
+      "version": 1,
+    },
+  ],
+}
+`;
