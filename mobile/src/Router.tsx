@@ -4,11 +4,16 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { useSelector, useDispatch } from 'react-redux';
 import Login from './components/Login/Login';
-import Grupo from './components/Grupo';
+import Grupo from './components/Grupo/Grupo';
 import { RootState } from './store';
 import { savaTokenAction, logoutAction } from './store/ducks/auth/actions';
 import { jwtUtil } from './util/jwt';
 import Register from './components/Register/Register';
+import { LogBox } from 'react-native';
+
+LogBox.ignoreLogs([
+  'Sending `onAnimatedValueUpdate` with no listeners registered.'
+]);
 
 const Stack = createStackNavigator();
 

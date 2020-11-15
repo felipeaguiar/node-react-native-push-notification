@@ -30,8 +30,7 @@ const filter = {
     page: Joi.number().min(0),
     sort: Joi.string(),
     order: Joi.string(),
-    nome: Joi.string(),
-    uf: Joi.string().max(2).min(2)
+    nome: Joi.string()
   })
 };
 

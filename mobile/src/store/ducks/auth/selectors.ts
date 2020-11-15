@@ -15,3 +15,7 @@ export function hasLoginError(state: RootState): boolean {
 export function getLoginErrorMessage(state: RootState): string {
   return state.auth.message;
 }
+
+export function getUserId(state: RootState): number {
+  return state.auth.jwt?.id || 0;
+}
