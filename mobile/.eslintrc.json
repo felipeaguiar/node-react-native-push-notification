@@ -1,0 +1,22 @@
+{
+  "root": true,
+  "extends": [
+    "@react-native-community",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "semi": [ "error", "always" ],
+    "comma-dangle": [ "error", "never" ],
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "prettier/prettier": 0,
+    "react-hooks/exhaustive-deps": 0,
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/no-inferrable-types": 2,
+    "@typescript-eslint/no-use-before-define": 0,
+    "@typescript-eslint/type-annotation-spacing": ["error", { "before": false, "after": true }]
+  }
+}
