@@ -4,6 +4,7 @@ import { isCelebrate } from 'celebrate';
 import { QueryFailedError } from 'typeorm';
 import { EntityNotFoundError } from 'typeorm/error/EntityNotFoundError';
 import { ConcurrencyError } from '../infrastructure/concurrency';
+import logger from '../config/logger';
 
 class ResponseMessage {
   status: number;
@@ -23,6 +24,7 @@ function handleHttpError(error): ResponseMessage {
   const message = new ResponseMessage();
 
   if (!error.expose) {
+    logger.error('Erro desconhecido.', { message: error.message, stack: error.stack });
     message.status = 500;
     message.error = { message: 'Erro desconhecido.' };
     return message;
@@ -85,6 +87,7 @@ export default function handler(error, request: Request, response: Response, nex
       }
     };
   } else {
+    logger.error('Erro desconhecido.', { message: error.message, stack: error.stack });
     message = {
       status: 500,
       error: { message: 'Erro desconhecido.' }

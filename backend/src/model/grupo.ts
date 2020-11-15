@@ -10,8 +10,8 @@ export class Grupo extends BaseEntity {
   @Column()
   nome: string;
 
-  @ManyToMany(type => Usuario, usuarios => usuarios.grupos)
-  usuarios: Usuario;
+  @ManyToMany(type => Usuario, usuarios => usuarios.grupos, { eager: true })
+  usuarios: Usuario[];
 
   @VersionColumn()
   version: number;

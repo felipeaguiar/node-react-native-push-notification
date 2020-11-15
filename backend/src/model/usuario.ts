@@ -27,7 +27,7 @@ export class Usuario extends BaseEntity {
 
   @ManyToMany(type => Grupo, grupos => grupos.usuarios)
   @JoinTable()
-  grupos: Grupo;
+  grupos: Grupo[];
 
   @VersionColumn()
   version: number;

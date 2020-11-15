@@ -2,6 +2,7 @@ import { Router, Request, Response } from 'express';
 import asyncHandler from 'express-async-handler';
 import { Joi, celebrate } from 'celebrate';
 import { Grupo } from '../model/grupo';
+import { Usuario } from '../model/usuario';
 import auth from '../middleware/auth';
 import { ConcurrencyError } from '../infrastructure/concurrency';
 import { setPageable } from '../util/util';
@@ -45,6 +46,27 @@ grupoController.get('/', celebrate(filter), asyncHandler(async (request: Request
   const [usuarios, count] = await query.getManyAndCount();
 
   response.header('X-Count', String(count)).send(usuarios);
+}));
+
+grupoController.put('/:id/entrar', celebrate(identity), asyncHandler(async (request: Request, response: Response) => {
+  const grupo = await Grupo.findOneOrFail(request.params.id);
+  const usuario = await Usuario.findOneOrFail(response.locals.userId);
+
+  grupo.usuarios = grupo.usuarios || [];
+  grupo.usuarios.push(usuario);
+  await grupo.save();
+
+  response.status(204).send();
+}));
+
+grupoController.put('/:id/sair', celebrate(identity), asyncHandler(async (request: Request, response: Response) => {
+  const grupo = await Grupo.findOneOrFail(request.params.id);
+
+  grupo.usuarios = grupo.usuarios || [];
+  grupo.usuarios = grupo.usuarios.filter(e => e.id !== response.locals.userId);
+  await grupo.save();
+
+  response.status(204).send();
 }));
 
 grupoController.get('/:id', celebrate(identity), asyncHandler(async (request: Request, response: Response) => {
