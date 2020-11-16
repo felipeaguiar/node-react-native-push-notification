@@ -21,6 +21,7 @@
   "author": "Felipe Aguiar",
   "license": "UNLICENSED",
   "dependencies": {
+    "axios": "^0.21.0",
     "bcryptjs": "^2.4.3",
     "celebrate": "^12.1.2",
     "cors": "^2.8.5",

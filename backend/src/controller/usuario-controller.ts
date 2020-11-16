@@ -11,4 +11,11 @@ usuarioController.get('/:id', asyncHandler(async (request: Request, response: Re
   response.send(usuario);
 }));
 
+usuarioController.put('/player-id/:player', asyncHandler(async (request: Request, response: Response) => {
+  const usuario = await Usuario.findOneOrFail(response.locals.userId);
+  usuario.playerId = request.params.player;
+  await usuario.save();
+  response.status(200).send();
+}));
+
 export default usuarioController;

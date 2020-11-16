@@ -32,6 +32,11 @@ export default function Login() {
       .required('Senha é um campo obrigatório.')
   });
 
+  async function setPlayerId() {
+    const player = await AsyncStorage.getItem('player') as string;
+    await api.put(`usuario/player-id/${player}`);
+  }
+
   async function onSubmit(auth: typeof initialValues) {
     dispatch(loadingAction());
 
@@ -47,6 +52,8 @@ export default function Login() {
 
       await AsyncStorage.setItem('token', token);
       dispatch(savaTokenAction(token, jwt));
+
+      await setPlayerId();
     } catch (error) {
       let message = 'Erro ao efetuar login';
 

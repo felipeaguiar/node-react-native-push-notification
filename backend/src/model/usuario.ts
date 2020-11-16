@@ -19,6 +19,9 @@ export class Usuario extends BaseEntity {
   @Column()
   papel: string;
 
+  @Column({ type: 'varchar', nullable: true, name: 'player_id' })
+  playerId?: string | null;
+
   @Column({ type: 'varchar', nullable: true, name: 'reset_token', select: false })
   resetToken?: string | null;
 

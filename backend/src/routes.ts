@@ -9,6 +9,7 @@ const routes = Router();
 routes.use('/auth', authController);
 routes.use('/usuario', usuarioController);
 routes.use('/grupo', grupoController);
+routes.use('/notification', grupoController);
 
 routes.all('*', (request, response, next) => next(createError(404)));
 

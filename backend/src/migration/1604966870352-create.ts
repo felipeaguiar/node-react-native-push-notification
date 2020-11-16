@@ -12,6 +12,7 @@ export class create implements MigrationInterface {
         email varchar(255) NOT NULL,
         senha varchar(255) NULL,
         papel varchar(255) NOT NULL,
+        player_id varchar(255) NULL,
         reset_token varchar(255) NULL,
         validade datetime NULL,
         version int NOT NULL,
