@@ -12,8 +12,16 @@ usuarioController.get('/:id', asyncHandler(async (request: Request, response: Re
 }));
 
 usuarioController.put('/player-id/:player', asyncHandler(async (request: Request, response: Response) => {
+  const usuarioAnterior = await Usuario.findOne({ playerId: request.params.player });
+
   const usuario = await Usuario.findOneOrFail(response.locals.userId);
   usuario.playerId = request.params.player;
+
+  if (usuarioAnterior) {
+    usuarioAnterior.playerId = null;
+    usuarioAnterior.save();
+  }
+
   await usuario.save();
   response.status(200).send();
 }));

@@ -11,6 +11,6 @@ export function setPageable(query, params) {
 }
 
 export async function getHtmlTemplate(template: string) {
-  const file = path.join(__dirname, template + '.html');
+  const file = path.join(global.rootPath, 'view', template + '.html');
   return await fs.readFile(file, { encoding: 'utf-8' });
 }

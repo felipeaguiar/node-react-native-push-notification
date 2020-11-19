@@ -1,4 +1,4 @@
-import { Entity, BaseEntity, PrimaryGeneratedColumn, VersionColumn, CreateDateColumn, UpdateDateColumn, Column, ManyToMany, JoinTable } from 'typeorm';
+import { Entity, BaseEntity, PrimaryGeneratedColumn, VersionColumn, CreateDateColumn, UpdateDateColumn, Column, ManyToMany, JoinTable, Index } from 'typeorm';
 import { Grupo } from './grupo';
 
 @Entity()
@@ -10,7 +10,8 @@ export class Usuario extends BaseEntity {
   @Column()
   nome: string;
 
-  @Column({ unique: true })
+  @Column()
+  @Index({ unique: true })
   email: string;
 
   @Column({ type: 'varchar', nullable: true, select: false })

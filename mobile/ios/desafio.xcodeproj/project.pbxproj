@@ -17,8 +17,11 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* desafioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* desafioTests.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		CBF854D04C09C425FF174625 /* libPods-desafio-OneSignalNotificationServiceExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6770B8402637C327D8D36A5 /* libPods-desafio-OneSignalNotificationServiceExtension.a */; };
 		EBDE4603B4BFFC8D94BC7B39 /* libPods-desafio-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A24A770261D6AC6A65D9C90B /* libPods-desafio-tvOSTests.a */; };
 		EEB8346371F19E1613231CD4 /* libPods-desafio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E94816EC907183C67B384183 /* libPods-desafio.a */; };
+		F877774E256685920028EB32 /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = F877774D256685920028EB32 /* NotificationService.m */; };
+		F8777752256685920028EB32 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F877774A256685920028EB32 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F8AD8CBD25616826001B8606 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8AD8CBC25616826001B8606 /* SplashScreen.storyboard */; };
 		FB3C009CB1C38C1CDEFCFADD /* libPods-desafio-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F83406B0F1D78845330AEB8 /* libPods-desafio-tvOS.a */; };
 /* End PBXBuildFile section */
@@ -38,13 +41,35 @@
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
 			remoteInfo = "desafio-tvOS";
 		};
+		F8777750256685920028EB32 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8777749256685920028EB32;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F8777756256685920028EB32 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F8777752256685920028EB32 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		00E356EE1AD99517003FC87E /* desafioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = desafioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* desafioTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = desafioTests.m; sourceTree = "<group>"; };
+		13340827D0B31301E5781221 /* Pods-desafio-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafio-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-desafio-OneSignalNotificationServiceExtension/Pods-desafio-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* Desafio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Desafio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = desafio/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = desafio/AppDelegate.m; sourceTree = "<group>"; };
@@ -60,15 +85,22 @@
 		67581A6BACDB459C7E910A4F /* Pods-desafio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafio.debug.xcconfig"; path = "Target Support Files/Pods-desafio/Pods-desafio.debug.xcconfig"; sourceTree = "<group>"; };
 		754E888D6E8A062F3BE31E28 /* Pods-desafio-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafio-tvOS.release.xcconfig"; path = "Target Support Files/Pods-desafio-tvOS/Pods-desafio-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = desafio/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8F105B10E8F8BFD2781EBECF /* Pods-desafio-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafio-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-desafio-OneSignalNotificationServiceExtension/Pods-desafio-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		94FED232A2B613D8793B17F7 /* Pods-desafio-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafio-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-desafio-tvOSTests/Pods-desafio-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		9C3508A4FAC3D2D1EC9FA222 /* Pods-desafio-desafioTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafio-desafioTests.debug.xcconfig"; path = "Target Support Files/Pods-desafio-desafioTests/Pods-desafio-desafioTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A242A3B7C3F2C8FC782D180E /* Pods-desafio-desafioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafio-desafioTests.release.xcconfig"; path = "Target Support Files/Pods-desafio-desafioTests/Pods-desafio-desafioTests.release.xcconfig"; sourceTree = "<group>"; };
 		A24A770261D6AC6A65D9C90B /* libPods-desafio-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-desafio-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6770B8402637C327D8D36A5 /* libPods-desafio-OneSignalNotificationServiceExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-desafio-OneSignalNotificationServiceExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C349D9F7A3F5D542DE0E0AEB /* Pods-desafio-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafio-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-desafio-tvOSTests/Pods-desafio-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E94816EC907183C67B384183 /* libPods-desafio.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-desafio.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F83120002561D81700835760 /* Desafio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Desafio.entitlements; path = desafio/Desafio.entitlements; sourceTree = "<group>"; };
+		F877774A256685920028EB32 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F877774C256685920028EB32 /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
+		F877774D256685920028EB32 /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
+		F877774F256685920028EB32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8777757256688D10028EB32 /* OneSignalNotificationServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OneSignalNotificationServiceExtension.entitlements; sourceTree = "<group>"; };
 		F8AD8CBC25616826001B8606 /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +134,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBDE4603B4BFFC8D94BC7B39 /* libPods-desafio-tvOSTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8777747256685920028EB32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBF854D04C09C425FF174625 /* libPods-desafio-OneSignalNotificationServiceExtension.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +190,7 @@
 				3510DF280457BFC7240D3634 /* libPods-desafio-desafioTests.a */,
 				3F83406B0F1D78845330AEB8 /* libPods-desafio-tvOS.a */,
 				A24A770261D6AC6A65D9C90B /* libPods-desafio-tvOSTests.a */,
+				A6770B8402637C327D8D36A5 /* libPods-desafio-OneSignalNotificationServiceExtension.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -165,6 +206,8 @@
 				754E888D6E8A062F3BE31E28 /* Pods-desafio-tvOS.release.xcconfig */,
 				C349D9F7A3F5D542DE0E0AEB /* Pods-desafio-tvOSTests.debug.xcconfig */,
 				94FED232A2B613D8793B17F7 /* Pods-desafio-tvOSTests.release.xcconfig */,
+				13340827D0B31301E5781221 /* Pods-desafio-OneSignalNotificationServiceExtension.debug.xcconfig */,
+				8F105B10E8F8BFD2781EBECF /* Pods-desafio-OneSignalNotificationServiceExtension.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -182,6 +225,7 @@
 				13B07FAE1A68108700A75B9A /* desafio */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* desafioTests */,
+				F877774B256685920028EB32 /* OneSignalNotificationServiceExtension */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				4AC8D41BF45CC65F46DB2C11 /* Pods */,
@@ -198,8 +242,20 @@
 				00E356EE1AD99517003FC87E /* desafioTests.xctest */,
 				2D02E47B1E0B4A5D006451C7 /* desafio-tvOS.app */,
 				2D02E4901E0B4A5D006451C7 /* desafio-tvOSTests.xctest */,
+				F877774A256685920028EB32 /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		F877774B256685920028EB32 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				F8777757256688D10028EB32 /* OneSignalNotificationServiceExtension.entitlements */,
+				F877774C256685920028EB32 /* NotificationService.h */,
+				F877774D256685920028EB32 /* NotificationService.m */,
+				F877774F256685920028EB32 /* Info.plist */,
+			);
+			path = OneSignalNotificationServiceExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,10 +292,12 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				62EA61C7DBF64635A037AF17 /* [CP] Copy Pods Resources */,
+				F8777756256685920028EB32 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F8777751256685920028EB32 /* PBXTargetDependency */,
 			);
 			name = desafio;
 			productName = desafio;
@@ -285,6 +343,25 @@
 			productReference = 2D02E4901E0B4A5D006451C7 /* desafio-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		F8777749256685920028EB32 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8777753256685920028EB32 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				AC6EB67DB2AAC90A1076D420 /* [CP] Check Pods Manifest.lock */,
+				F8777746256685920028EB32 /* Sources */,
+				F8777747256685920028EB32 /* Frameworks */,
+				F8777748256685920028EB32 /* Resources */,
+				076B23E0C16A4FBC80F595D6 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneSignalNotificationServiceExtension;
+			productName = OneSignalNotificationServiceExtension;
+			productReference = F877774A256685920028EB32 /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -310,6 +387,11 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2D02E47A1E0B4A5D006451C7;
 					};
+					F8777749256685920028EB32 = {
+						CreatedOnToolsVersion = 11.5;
+						DevelopmentTeam = 8P23Q2DT4B;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "desafio" */;
@@ -329,6 +411,7 @@
 				00E356ED1AD99517003FC87E /* desafioTests */,
 				2D02E47A1E0B4A5D006451C7 /* desafio-tvOS */,
 				2D02E48F1E0B4A5D006451C7 /* desafio-tvOSTests */,
+				F8777749256685920028EB32 /* OneSignalNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -366,6 +449,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F8777748256685920028EB32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -382,6 +472,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		076B23E0C16A4FBC80F595D6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-desafio-OneSignalNotificationServiceExtension/Pods-desafio-OneSignalNotificationServiceExtension-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-desafio-OneSignalNotificationServiceExtension/Pods-desafio-OneSignalNotificationServiceExtension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -431,6 +539,28 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-desafio-tvOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC6EB67DB2AAC90A1076D420 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-desafio-OneSignalNotificationServiceExtension-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -596,6 +726,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F8777746256685920028EB32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F877774E256685920028EB32 /* NotificationService.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -608,6 +746,11 @@
 			isa = PBXTargetDependency;
 			target = 2D02E47A1E0B4A5D006451C7 /* desafio-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
+		};
+		F8777751256685920028EB32 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F8777749256685920028EB32 /* OneSignalNotificationServiceExtension */;
+			targetProxy = F8777750256685920028EB32 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -672,7 +815,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.felipeaguiar.desafio;
+				PRODUCT_BUNDLE_IDENTIFIER = br.dev.felipeaguiar.desafio;
 				PRODUCT_NAME = Desafio;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -696,7 +839,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.felipeaguiar.desafio;
+				PRODUCT_BUNDLE_IDENTIFIER = br.dev.felipeaguiar.desafio;
 				PRODUCT_NAME = Desafio;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -926,6 +1069,60 @@
 			};
 			name = Release;
 		};
+		F8777754256685920028EB32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13340827D0B31301E5781221 /* Pods-desafio-OneSignalNotificationServiceExtension.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 8P23Q2DT4B;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = br.dev.felipeaguiar.desafio.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F8777755256685920028EB32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F105B10E8F8BFD2781EBECF /* Pods-desafio-OneSignalNotificationServiceExtension.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 8P23Q2DT4B;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = br.dev.felipeaguiar.desafio.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -970,6 +1167,15 @@
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
 				83CBBA211A601CBA00E9B192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8777753256685920028EB32 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8777754256685920028EB32 /* Debug */,
+				F8777755256685920028EB32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

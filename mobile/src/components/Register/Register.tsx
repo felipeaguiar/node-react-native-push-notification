@@ -34,6 +34,11 @@ export default function Register() {
       .required('Confirmar Senha é um campo obrigatório.')
   });
 
+  async function setPlayerId() {
+    const player = await AsyncStorage.getItem('player') as string;
+    await api.put(`usuario/player-id/${player}`);
+  }
+
   async function onSubmit(values: typeof initialValues) {
     try {
       const response = await api.post('auth/register', {
@@ -54,6 +59,8 @@ export default function Register() {
       }
 
       dispatch(savaTokenAction(token, jwt));
+
+      await setPlayerId();
     } catch (error) {
       let message = 'Erro ao efetuar login';
 

@@ -38,12 +38,18 @@ grupoController.get('/', celebrate(filter), asyncHandler(async (request: Request
   let query = await Grupo.createQueryBuilder('g')
     .leftJoinAndSelect('g.usuarios', 'u');
 
-  query = addWhere(query, request.query);
+  if (request.params.nome) {
+    query = query.andWhere('UPPER(g.nome) LIKE :nome', { nome: '%' + request.params.nome.toUpperCase() + '%' });
+  }
+
+  if (request.params.sort === 'nome') {
+    query = query.orderBy('g.nome', request.params.order.toUpperCase() === 'DESC' ? 'DESC' : 'ASC');
+  } else {
+    query = query.orderBy('g.id', 'ASC');
+  }
+
   query = setPageable(query, request.query);
-  query = setOrder(query, request.query);
-
   const [usuarios, count] = await query.getManyAndCount();
-
   response.header('X-Count', String(count)).send(usuarios);
 }));
 
@@ -101,23 +107,5 @@ grupoController.delete('/:id', celebrate(identity), asyncHandler(async (request:
   await grupo.remove();
   response.status(204).send();
 }));
-
-function addWhere(query, params) {
-  if (params.nome) {
-    query = query.andWhere('UPPER(g.nome) LIKE :nome', { nome: `%${params.nome.toUpperCase()}%` });
-  }
-
-  return query;
-}
-
-function setOrder(query, params) {
-  if (params.sort === 'nome') {
-    query = query.orderBy('g.nome', params.order.toUpperCase());
-  } else {
-    query = query.orderBy('g.id', 'ASC');
-  }
-
-  return query;
-}
 
 export default grupoController;
