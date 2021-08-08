@@ -9,8 +9,6 @@ import AsyncStorage from '@react-native-community/async-storage';
 function App() {
 
   function init() {
-    SplashScreen.hide();
-
     OneSignal.setLogLevel(6, 0);
 
     OneSignal.init('4be43d8f-7f07-4c37-a20f-f44a1fa5d354', {kOSSettingsKeyAutoPrompt : false, kOSSettingsKeyInAppLaunchURL: false, kOSSettingsKeyInFocusDisplayOption:2});
@@ -50,6 +48,7 @@ function App() {
 
   useEffect(() => {
     init();
+    SplashScreen.hide();
     return () => {
       cleanup();
     };
